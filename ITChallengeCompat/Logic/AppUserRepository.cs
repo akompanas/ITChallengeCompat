@@ -19,12 +19,6 @@ namespace ITChallengeCompat.Logic
                 Age = 21,
                 Name = "Petras Suaugęs"
             };
-            _users[2] = new AppUser
-            {
-                Id = 2,
-                Age = 19,
-                Name = "Marytė Faina"
-            };
         }
 
         public IEnumerable<AppUser> ListAll()

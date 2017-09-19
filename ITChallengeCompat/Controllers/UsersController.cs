@@ -13,9 +13,9 @@ namespace ITChallengeCompat.Controllers
     {
         private AppUserRepository _users;
 
-        public UsersController(AppUserRepository users)
+        public UsersController()
         {
-            _users = users;
+            _users = new AppUserRepository();
         }
 
         [HttpGet]

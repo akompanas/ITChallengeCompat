@@ -1,5 +1,4 @@
-﻿using ITChallengeCompat.App_Start;
-using ITChallengeCompat.Logic;
+﻿using ITChallengeCompat.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +11,6 @@ namespace ITChallengeCompat
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            config.DependencyResolver = new MyDependencyResolver();
 
             // Web API routes
             config.MapHttpAttributeRoutes();
