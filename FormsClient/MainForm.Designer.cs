@@ -49,6 +49,7 @@
             this.userList.Name = "userList";
             this.userList.Size = new System.Drawing.Size(390, 95);
             this.userList.TabIndex = 1;
+            this.userList.DoubleClick += new System.EventHandler(this.userList_DoubleClick);
             // 
             // MainForm
             // 

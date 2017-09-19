@@ -31,5 +31,10 @@ namespace ITChallengeCompat.Logic
         {
             return _users.Values;
         }
+
+        public AppUser Get(int id)
+        {
+            return _users[id];
+        }
     }
 }

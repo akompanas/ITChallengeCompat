@@ -23,5 +23,13 @@ namespace ITChallengeCompat.Controllers
         {
             return _users.ListAll();
         }
+
+        [HttpPost]
+        public void Update(AppUser user)
+        {
+            var existingUser = _users.Get(user.Id);
+            existingUser.Name = user.Name;
+            existingUser.Age = user.Age;
+        }
     }
 }

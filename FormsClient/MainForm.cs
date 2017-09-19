@@ -35,13 +35,31 @@ namespace FormsClient
                     string input = reader.ReadToEnd();
                     var users = JsonConvert.DeserializeObject<List<ClientUser>>(input);
                     userList.Items.AddRange(users.ToArray());
-                    MessageBox.Show("List OK: " + users.Count);
                 }
             }
             else
             {
                 MessageBox.Show("List failed!");
             }
+        }
+
+        private void userList_DoubleClick(object sender, EventArgs e)
+        {
+            var form = new UserEditForm
+            {
+                User = (ClientUser)userList.SelectedItem
+            };
+            if (form.User == null)
+                return;
+            if (form.ShowDialog(this) != DialogResult.OK)
+                return;
+            userList.Items[userList.SelectedIndex] = userList.SelectedItem;
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            string input = JsonConvert.SerializeObject(form.User);
+            var resp = client.PostAsync("http://localhost:50039/api/Users/Update", new StringContent(input, Encoding.UTF8, "application/json")).Result;
+            MessageBox.Show("Update: " + resp);
         }
     }
 }
