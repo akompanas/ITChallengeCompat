@@ -11,17 +11,17 @@ namespace ITChallengeCompat.Controllers
 {
     public class UsersController : ApiController
     {
-        private AppUserRepository _users;
+        private UserRepository2 _users;
 
         public UsersController()
         {
-            _users = new AppUserRepository();
+            _users = new UserRepository2();
         }
 
         [HttpGet]
         public IEnumerable<AppUser> Index()
         {
-            return _users.ListAll();
+            return _users;
         }
     }
 }
