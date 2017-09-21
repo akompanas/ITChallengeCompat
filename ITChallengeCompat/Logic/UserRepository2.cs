@@ -14,7 +14,16 @@ namespace ITChallengeCompat.Logic
             {
                 Id = 1,
                 Age = 21,
-                Name = "Petras Suaugęs"
+                Name = "Petras Suaugęs",
+                HobbyList = new string[] { "Futbolas" }.ToList()
+            });
+
+            Add(new AppUser
+            {
+                Id = 2,
+                Age = 18,
+                Name = "Marytė Melnikaitė",
+                HobbyList = new string[] { "Siuvinėjimas", "Boksas" }.ToList()
             });
         }
     }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DesktopClient
 {
-    class ClientUser
+    public class ClientUser
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
+        //public string Hobby { get; set; }
 
         public override string ToString()
         {
